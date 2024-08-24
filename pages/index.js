@@ -68,7 +68,7 @@ export default function Home() {
         </h5>
       </div>
 
-      <div className="relative lg:flex justify-center mt-96 lg:mb-10 items-center lg:mt-96 md:mt-96 md:flex">
+      <div className="relative lg:flex justify-center mt-96 lg:mb-10 lg:mt-96 md:mt-96 md:flex">
         <svg
           viewBox="0 0 2158 770"
           fill="none"

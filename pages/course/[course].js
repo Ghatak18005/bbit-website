@@ -58,33 +58,34 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <div id="faculty members" className="mb-8">
-          <h2 className="flex justify-center items-center text-base font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto">
-            Faculty Members
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-16 lg:gap-y-6 gap-x-12 gap-y-5 mt-5 mx-auto justify-items-center">
-            {deptData.faculty.map((member, index) => (
-              <div
-                key={index}
-                className="border-2 border-[#27066F] rounded-lg lg:w-52 w-40 bg-[#EAE6FF]"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-48 rounded-t-lg"
-                />
-                <div className="mt-1 text-center">
-                  <h3 className="text-base font-semibold">{member.name}</h3>
-                  <p className="text-sm">{member.designation}</p>
-                  <p className="text-sm">{member.qualification}</p>
-                  <p className="text-sm">
-                    Years of Experience: {member.experience}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div id="faculty" className="mb-8">
+  <h2 className="flex justify-center items-center text-base font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto">
+    Faculty Members
+  </h2>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5 lg:gap-8 mt-5 mx-auto justify-items-center">
+    {deptData.faculty.map((member, index) => (
+      <div
+        key={index}
+        className="border-2 border-[#27066F] rounded-lg w-full sm:w-48 md:w-52 bg-[#EAE6FF]"
+      >
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-48 rounded-t-lg"
+        />
+        <div className="p-2 text-center">
+          <h3 className="text-sm sm:text-base font-semibold">{member.name}</h3>
+          <p className="text-xs sm:text-sm">{member.designation}</p>
+          <p className="text-xs sm:text-sm">{member.qualification}</p>
+          <p className="text-xs sm:text-sm">
+            Years of Experience: {member.experience}
+          </p>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <div id="laboratory" className="mb-8">
   <h2 className="text-xl font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto flex justify-center items-center mb-4">
