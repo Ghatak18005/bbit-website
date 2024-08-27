@@ -30,36 +30,24 @@ export default function Awards() {
         date: "2024-09-20",
         image: "/awards/comp.jpg",
       },
+      {
+        title: "Pioneer Award",
+        desc: "Recognized for groundbreaking research in technology.",
+        date: "2012-07-20",
+        image: "/awards/comp.jpg",
+      },
+      {
+        title: "Pioneer Award",
+        desc: "Recognized for groundbreaking research in technology.",
+        date: "2012-07-20",
+        image: "/awards/comp.jpg",
+      },
     ],
     2024: [
       {
         title: "Lifetime Achievement Award",
         desc: "Awarded for outstanding contribution over a lifetime.",
         date: "2012-02-10",
-        image: "/awards/comp.jpg",
-      },
-      {
-        title: "Pioneer Award",
-        desc: "Recognized for groundbreaking research in technology.",
-        date: "2012-07-20",
-        image: "/awards/comp.jpg",
-      },
-      {
-        title: "Pioneer Award",
-        desc: "Recognized for groundbreaking research in technology.",
-        date: "2012-07-20",
-        image: "/awards/comp.jpg",
-      },
-      {
-        title: "Pioneer Award",
-        desc: "Recognized for groundbreaking research in technology.",
-        date: "2012-07-20",
-        image: "/awards/comp.jpg",
-      },
-      {
-        title: "Pioneer Award",
-        desc: "Recognized for groundbreaking research in technology.",
-        date: "2012-07-20",
         image: "/awards/comp.jpg",
       },
       {
@@ -76,9 +64,12 @@ export default function Awards() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 mt-20 lg:mt-24 overflow-hidden min-h-screen">
+    <div className="flex flex-col items-center justify-center p-4 mt-14 lg:mt-20 overflow-hidden min-h-screen">
       <div className="py-2 bg-[#D8D1FF] rounded-xl mb-6 flex justify-center px-4">
-        <h2 id="awards" className="text-xl md:text-2xl text-[#27066F] font-bold">
+        <h2
+          id="awards"
+          className="text-xl md:text-2xl text-[#27066F] font-bold"
+        >
           Awards for {selectedYear}
         </h2>
       </div>
@@ -102,8 +93,8 @@ export default function Awards() {
         </div>
       </div>
 
-      <div className="w-full max-w-6xl mx-auto mb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="lg:w-full max-w-3xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-6 lg:gap-8 xl:gap-8 gap-4 mt-5">
           {awardsData[selectedYear]?.map((award, i) => (
             <div
               key={i}
@@ -111,22 +102,24 @@ export default function Awards() {
             >
               <img
                 src="/awards/award.svg"
-                className="absolute -top-6 -right-9 w-20 h-16 z-0"
+                className="absolute lg:-top-7 lg:-right-10 xl:-top-10 xl:-right-8 -top-5 -right-6 w-12 h-10 z-0 lg:h-16 lg:w-20 xl:h-20 xl:w-16"
                 alt="badge"
               />
-              <div className="absolute -top-3 -right-3 flex items-center justify-center z-10 ">
-                <div className="relative bg-white text-purple-600 font-bold text-xs rounded-full w-8 h-8 flex items-center justify-center border border-[#27066F]">
+              <div className="absolute -top-4 -right-3 xl:-top-6 xl:-right-5 flex items-center justify-center z-10">
+                <div className="relative bg-white text-purple-600 font-bold text-xs rounded-full lg:w-8 lg:h-8 xl:w-10 xl:h-9 w-6 h-6 flex items-center justify-center border border-[#27066F]">
                   {formatDate(award.date)}
                 </div>
               </div>
 
               <div
-                className="w-full h-48 bg-cover bg-center rounded-t-xl"
+                className="lg:w-full lg:h-48 xl:h-60 xl:w-full md:w-full md:h-56 h-48 w-full bg-cover bg-center rounded-t-xl"
                 style={{ backgroundImage: `url(${award.image})` }}
               ></div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold">{award.title}</h3>
-                <p className="text-sm mt-1">{award.desc}</p>
+              <div className="p-4 xl:p-4 md:p-2">
+                <h3 className="sm:text-base md:text-lg xl:text-xl font-bold">
+                  {award.title}
+                </h3>
+                <p className="text-sm md:text-sm lg:text-sm xl:text-base mt-1">{award.desc}</p>
               </div>
             </div>
           ))}

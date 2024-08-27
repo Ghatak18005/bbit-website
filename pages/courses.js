@@ -34,18 +34,18 @@ const Courses = () => {
       setDeptsData(data);
     };
 
-    setTimeout(fetchData, 1000); 
+    setTimeout(fetchData, 1000);
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 mx-auto mb-5 lg:mb-20 md:mb-10 mt-12 min-h-screen max-w-6xl">
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 mx-auto">
+    <div className="flex flex-col items-center p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 mx-auto mb-5 lg:mb-20 md:mb-10 mt-12 min-h-screen max-w-7xl ">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-2 justify-center xl:gap-x-10">
         {deptsData ? (
           Object.keys(deptsData).map((key, index) => {
             const item = deptsData[key][0];
             const buttons = item.type.map((type, typeIndex) => (
               <button
-                className="px-2 py-1 text-xs sm:text-sm md:text-base lg:text-lg rounded-lg text-white font-bold border-2 border-white hover:bg-white hover:text-black"
+                className="px-2 py-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-lg text-white font-bold border-2 border-white hover:bg-white hover:text-black"
                 key={typeIndex}
                 onClick={() =>
                   router.push(`/course/${item.name.toLowerCase().replace(/\s+/g, "-")}_${type.toLowerCase()}`)
@@ -57,19 +57,19 @@ const Courses = () => {
 
             return (
               <div
-                className="relative text-sm sm:text-base md:text-lg lg:text-xl h-36 bg-[#FFB224] rounded-3xl text-[#FFFAEB] text-start flex flex-col p-4 w-50 lg:w-80 md:w-64 md:h-48 lg:h-52 mt-3"
+                className="relative text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl h-36 bg-[#FFB224] rounded-3xl text-[#FFFAEB] text-start flex flex-col p-4 w-50 lg:w-80 md:w-64 md:h-48 lg:h-52 xl:w-72 xl:h-56 mt-3"
                 key={index}
               >
                 <div className="flex flex-col items-start">
                   <span className="font-bold">{item.name}</span>
-                  <div className="flex flex-wrap justify-center gap-2 absolute lg:mt-32 mt-20 md:mt-28">
+                  <div className="flex flex-wrap justify-center gap-2 absolute lg:mt-32 mt-20 md:mt-28 xl:mt-36">
                     {buttons}
                   </div>
                 </div>
                 <img
                   src={item.path}
                   alt={item.name}
-                  className="w-16 h-14 sm:w-28 sm:h-24 md:w-28 md:h-20 lg:w-28 lg:h-24 lg:mt-7 mt-4 lg:ml-44 md:ml-32 ml-14 absolute"
+                  className="w-16 h-14 sm:w-28 sm:h-24 md:w-28 md:h-20 xl:w-28 xl:h-24 lg:w-28 lg:h-24 lg:mt-7 xl:mt-10 mt-4 lg:ml-44 md:ml-32 ml-14 xl:ml-36 absolute"
                 />
               </div>
             );
@@ -77,7 +77,7 @@ const Courses = () => {
         ) : (
           Array.from({ length: 6 }).map((_, index) => (
             <div
-              className="relative text-sm sm:text-base md:text-lg lg:text-xl h-36 bg-[#FFB224] rounded-3xl text-[#FFFAEB] text-start flex flex-col p-4 w-50 lg:w-80 md:w-64 md:h-48 lg:h-52 mt-3"
+              className="relative text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl h-36 bg-[#FFB224] rounded-3xl text-[#FFFAEB] text-start flex flex-col p-4 w-50 lg:w-80 md:w-64 md:h-48 lg:h-52 xl:w-72 xl:h-56 mt-3"
               key={index}
             >
               <div className="p-4">

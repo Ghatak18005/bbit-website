@@ -32,12 +32,12 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row p-10 sm:p-8 md:p-10 lg:p-12 xl:p-16 mx-auto min-h-screen lg:max-w-6xl mt-20 text-[#27066F]">
-      <div className="w-full md:w-1/4 lg:w-1/6">
+    <div className="flex flex-col md:flex-row p-10 sm:p-8 md:p-10 lg:p-12 xl:p-16 mx-auto min-h-screen lg:max-w-6xl xl:max-w-7xl mt-20 text-[#27066F]">
+      <div className="w-full md:w-1/4 lg:w-1/5 xl:w-1/6">
         <Sidebar />
       </div>
 
-      <div className="w-full md:w-3/4 lg:w-4/5">
+      <div className="w-full md:w-3/4 lg:w-4/5 xl:w-full">
         <div id="about" className="mb-8">
           <h2 className="text-xl font-bold lg:mt-0 mt-20">Vision</h2>
           <p className="mt-5">{deptData.vision}</p>
@@ -47,7 +47,7 @@ const CourseDetails = () => {
           <div className="mt-5">
             {Array.isArray(deptData.mission) ? (
               deptData.mission.map((item, index) => (
-                <div key={index} className="flex justify-center">
+                <div key={index} className="flex">
                   <span className="mr-2">{item.point}</span>
                   <p>{item.text}</p>
                 </div>
@@ -59,55 +59,55 @@ const CourseDetails = () => {
         </div>
 
         <div id="faculty" className="mb-8">
-  <h2 className="flex justify-center items-center text-base font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto">
-    Faculty Members
-  </h2>
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5 lg:gap-8 mt-5 mx-auto justify-items-center">
-    {deptData.faculty.map((member, index) => (
-      <div
-        key={index}
-        className="border-2 border-[#27066F] rounded-lg w-full sm:w-48 md:w-52 bg-[#EAE6FF]"
-      >
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-48 rounded-t-lg"
-        />
-        <div className="p-2 text-center">
-          <h3 className="text-sm sm:text-base font-semibold">{member.name}</h3>
-          <p className="text-xs sm:text-sm">{member.designation}</p>
-          <p className="text-xs sm:text-sm">{member.qualification}</p>
-          <p className="text-xs sm:text-sm">
-            Years of Experience: {member.experience}
-          </p>
+          <h2 className="flex justify-center items-center text-base font-bold w-full sm:w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto">
+            Faculty Members
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xl:gap-10 gap-5 lg:gap-8 mt-5 mx-auto justify-items-center">
+            {deptData.faculty.map((member, index) => (
+              <div
+                key={index}
+                className="border-2 border-[#27066F] rounded-lg w-full sm:w-48 md:w-52 bg-[#EAE6FF] lg:h-full xl:h-full"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-48 sm:h-48 md:h-48 lg:h-48 xl:h-48 rounded-t-lg"
+                />
+                <div className="p-2 text-center">
+                  <h3 className="text-sm sm:text-base md:text-base lg:text-base xl:text-base font-semibold">{member.name}</h3>
+                  <p className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm">{member.designation}</p>
+                  <p className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm">{member.qualification}</p>
+                  <p className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm">
+                    Years of Experience: {member.experience}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
 
 
         <div id="laboratory" className="mb-8">
-  <h2 className="text-xl font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto flex justify-center items-center mb-4">
-    Laboratory
-  </h2>
-  {deptData.labs.map((lab, index) => (
-    <div
-      key={index}
-      className="flex flex-col md:flex-row items-center mb-8 md:mb-12 text-center md:text-left"
-    >
-      <img
-        src={lab.image}
-        alt={lab.name}
-        className="w-full h-60 md:w-72 md:h-60 lg:w-80 lg:h-72 xl:w-96 xl:h-80 mb-4 md:mb-0 md:mr-4 rounded-lg object-cover"
-      />
-      <div className="mt-4 md:mt-0 w-full md:w-2/4 xl:w-1/2">
-        <h3 className="text-lg font-semibold mb-2">{lab.name}</h3>
-        <p className="text-sm md:text-base">{lab.description}</p>
-      </div>
-    </div>
-  ))}
-</div>
+          <h2 className="text-xl font-bold w-52 h-10 bg-[#D8D1FF] rounded-2xl mx-auto flex justify-center items-center mb-4">
+            Laboratory
+          </h2>
+          {deptData.labs.map((lab, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row items-center mb-8 md:mb-12 text-center md:text-left"
+            >
+              <img
+                src={lab.image}
+                alt={lab.name}
+                className="w-full h-60 md:w-72 md:h-60 lg:w-80 lg:h-72 xl:w-96 xl:h-80 mb-4 md:mb-0 md:mr-4 rounded-lg object-cover"
+              />
+              <div className="mt-4 md:mt-0 w-full md:w-2/4 xl:w-1/2">
+                <h3 className="text-lg font-semibold mb-2">{lab.name}</h3>
+                <p className="text-sm md:text-base">{lab.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
 
         <div id="timetable" className="mb-8">
@@ -122,9 +122,8 @@ const CourseDetails = () => {
                     <th
                       key={sem}
                       onClick={() => setSelectedSemester(sem)}
-                      className={`cursor-pointer text-[#27066F] text-center py-3 px-2 font-semibold text-base border-t-1 border-b-1 border-[#27066F] ${
-                        selectedSemester === sem ? "bg-[#B3A1FF]" : ""
-                      }`}
+                      className={`cursor-pointer text-[#27066F] text-center py-3 px-2 font-semibold text-base border-t-1 border-b-1 border-[#27066F] ${selectedSemester === sem ? "bg-[#B3A1FF]" : ""
+                        }`}
                     >
                       {sem}
                     </th>
@@ -133,19 +132,19 @@ const CourseDetails = () => {
               </thead>
             </table>
             {pdfUrl && (
-            <div className="mt-0">
-              <iframe
-                src={pdfUrl}
-                width="100%"
-                height="600px"
-                style={{ border: "none" }}
-                title="Time Table"
-              />
-            </div>
-          )}
+              <div className="mt-0">
+                <iframe
+                  src={pdfUrl}
+                  width="100%"
+                  height="600px"
+                  style={{ border: "none" }}
+                  title="Time Table"
+                />
+              </div>
+            )}
           </div>
 
-         
+
         </div>
 
         <div id="syllabus" className="mb-8">

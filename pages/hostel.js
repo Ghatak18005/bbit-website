@@ -11,15 +11,15 @@ const Hostel = () => {
 
   const Section = ({ title, content, imageAlt, imageUrl }) => (
     <div className="flex flex-col items-center mb-12">
-      <div className="w-full max-w-48 md:max-w-md lg:max-w-60 h-12 bg-[#FFDE88] text-center rounded-2xl flex items-center justify-center font-bold mb-5 mt-12 md:mt-0 text-lg md:text-xl">
+      <div className="w-full max-w-48 md:max-w-md lg:max-w-60 xl:max-w-72 h-12 bg-[#FFDE88] text-center rounded-2xl flex items-center justify-center font-bold mb-5 mt-12 md:mt-0 text-lg md:text-xl">
         {title}
       </div>
       <img
         src={imageUrl}
         alt={imageAlt}
-        className="w-full max-w-md h-40 md:h-60 lg:h-72 object-cover mt-5"
+        className="w-full h-40 md:h-60 lg:h-72 xl:h-80 object-cover mt-5"
       />
-      <div className="px-4 md:px-8 lg:px-30 mt-8 max-w-4xl text-left">
+      <div className="text-lg px-4 md:px-8 lg:px-30 mt-8 max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl text-left">
         {content}
       </div>
     </div>
@@ -27,7 +27,7 @@ const Hostel = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <div className="max-w-7xl w-full p-8 md:p-16 lg:p-36 flex flex-col items-center text-[#27066F]">
+      <div className="w-full p-8 md:p-16 lg:p-36 xl:p-32 flex flex-col items-center text-[#27066F]">
         <Section
           title="Girl's Hostel"
           imageAlt="Girl's Hostel"
